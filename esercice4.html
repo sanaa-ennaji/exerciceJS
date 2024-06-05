@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p>entrer your age</p>
+    <input type="number" id="age" >
+    <button onclick="Commentaire()">submit</button>
+    <p id="commentaire"></p> 
+</body>
+    <script>
+        function Commentaire() {
+            var age = document.getElementById("age").value;
+            age = parseInt(age);
+            var commentaire = "";
+
+            if ( age < 1 || age > 120) {
+                commentaire = "entrer un age valide entre 1 et 120 ans.";
+            } else if (age >= 1 && age <= 17) {
+                commentaire = "Vous n'êtes pas encore majeur.";
+            } else if (age >= 18 && age <= 49) {
+                commentaire = "Vous êtes majeur mais pas encore senior.";
+            } else if (age >= 50 && age <= 59) {
+                commentaire = "Vous êtes senior mais pas encore retraité.";
+            } else if (age >= 60 && age <= 120) {
+                commentaire = "Vous êtes retraité, profitez de votre temps libre !";
+            }
+
+            document.getElementById("commentaire").innerText = commentaire;
+        }
+    </script>
+
+</html>

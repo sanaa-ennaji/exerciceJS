@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>guess the number</h1>
+    <p>between 0 and 10 :</p>
+    <input type="number" id="chiffre">
+    <button onclick="givenNumber()">submit</button>
+    <p id="resultat"></p> 
+</body>
+    <script>
+        function givenNumber() {
+            var number = 7;
+            var devine = document.getElementById("chiffre").value;
+            devine = parseInt(devine);
+            var message = "";
+
+            if ( devine < 0 || devine > 10) {
+                message = "enter a number between 1 and 10";
+            } else {
+                if (devine === number) {
+                    message = "congras you get it";
+                } else {
+                    message = "wrong answer";
+                }
+            }
+
+          
+            document.getElementById("resultat").innerText = message;
+        }
+    </script>
+
+</html>

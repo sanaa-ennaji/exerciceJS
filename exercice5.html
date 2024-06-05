@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-8">
+        <h1 class="text-2xl font-bold mb-4">Des nombres de 1 à 10 et du tableau 10x10</h1>
+        <div id="tableau" ></div>
+    </div>
+</body>
+    <script>
+        function afficherTableau() {
+            var tableau = "<table class='table-auto border-collapse border border-gray-400'>";
+            
+            for (var ligne = 1; ligne <= 10; ligne++) {
+                tableau += "<tr>";
+                for (var colonne = 1; colonne <= 10; colonne++) {
+                    tableau += "<td class='border border-gray-300 px-4 py-2'>L " + ligne + ", C " + colonne + "</td>";
+                }
+                tableau += "</tr>";
+            }
+
+            tableau += "</table>";
+            document.getElementById("tableau").innerHTML = tableau;
+        }
+
+        window.onload = function() {
+            afficherTableau();
+        };
+    </script>
+</html>
